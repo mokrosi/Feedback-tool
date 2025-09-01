@@ -1,0 +1,213 @@
+/* Import styles from SurveyCreationPage */
+@import "../SurveyCreation/SurveyCreationPage.module.css";
+
+/* Override specific styles for Edit page */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+  gap: var(--space-md);
+}
+
+.loadingContainer .spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingContainer p {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Custom styles for edit specific elements */
+.pageTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0;
+}
+
+.titleIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+/* Warning banner styles for surveys with responses */
+.warningBanner {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(245, 158, 11, 0.1)
+  );
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  animation: slideDown 0.3s ease-out;
+}
+
+.warningContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.warningIcon {
+  width: 24px;
+  height: 24px;
+  color: rgb(245, 158, 11);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.warningText h3 {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: rgb(245, 158, 11);
+}
+
+.warningText p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Disabled state overrides */
+.questionCard.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.questionCard.disabled .removeButton,
+.questionCard.disabled .addOptionButton,
+.questionCard.disabled .removeOptionButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.questionCard.disabled input,
+.questionCard.disabled textarea,
+.questionCard.disabled select {
+  cursor: not-allowed;
+  background-color: var(--background-subtle);
+}
+
+.sortableQuestionItem.disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.sortableQuestionItem.disabled .dragHandle {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.addQuestionHeaderButton:disabled,
+.addQuestionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--background-subtle);
+  color: var(--text-muted);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+/* Warning banner for surveys with responses */
+.warningBanner {
+  background: linear-gradient(135deg, #fff3cd, #ffeeba);
+  border: 1px solid #ffeaa7;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.warningBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+.warningContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.warningIcon {
+  width: 24px;
+  height: 24px;
+  color: #f39c12;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.warningText h3 {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: #b7791f;
+}
+
+.warningText p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: #8c6914;
+  line-height: 1.4;
+}
+
+/* Disabled state for question components */
+.questionCard.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  background: var(--background-secondary);
+}
+
+.questionCard.disabled .questionHeader {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  margin-left: var(--space-lg);
+}

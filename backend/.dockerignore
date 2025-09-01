@@ -1,0 +1,24 @@
+target/
+!target/\*.jar
+
+# IDE files
+
+.idea/
+.vscode/
+_.iml
+_.ipr
+\*.iws
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Logs
+
+\*.log
+
+# Git
+
+.git/
+.gitignore
